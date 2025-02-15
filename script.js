@@ -23,25 +23,25 @@ start_button.addEventListener('click', () => {
     switch (checked_index) {
         case 0:
             difficulty = "Easy";
-            numberToGuess = Math.floor(Math.random()*(11)+ 1 );
+            numberToGuess = Math.floor(Math.random()*(10)+ 1 );
             tries_left = 3;
             range = 10;
             break;
         case 1:
             difficulty = "Medium";
-            numberToGuess = Math.floor(Math.random()*(21)+ 1 );
+            numberToGuess = Math.floor(Math.random()*(20)+ 1 );
             tries_left = 5;
             range = 20;
             break;
         case 2:
             difficulty = "Hard";
-            numberToGuess = Math.floor(Math.random()*(31)+ 1 );
+            numberToGuess = Math.floor(Math.random()*(30)+ 1 );
             tries_left = 7;
             range = 30;
             break;
         default:
             difficulty = "Easy";
-            numberToGuess = Math.floor(Math.random()*(11)+ 1 );
+            numberToGuess = Math.floor(Math.random()*(10)+ 1 );
             tries_left = 3;
             range = 10;
             break;

@@ -70,10 +70,10 @@ restat_button.addEventListener('click', () => {
 
 function Play() {
     if (tries_left > 0) {
-        guess = parseInt(prompt(`Entrez un nombre entre 1 et ${range} (vous avez ${tries_left} essais restants):`));
+        guess = parseInt(prompt(`Guss the number between 1 and ${range} (You still have ${tries_left} tries left):`));
 
         if (isNaN(guess)) {
-            alert("Veuillez entrer un nombre valide.");
+            alert("Error: Invalid guess, please Enter a number.");
             Play();
             return;
         }
@@ -82,15 +82,15 @@ function Play() {
         document.querySelector('#tries').textContent = tries_left;
 
         if (guess > numberToGuess) {
-            alert('Plus petit!');
+            alert('Go Lower!');
             setTimeout(Play, 100);
         } else if (guess < numberToGuess) {
-            alert('Plus grand!');
+            alert('Go Higher!');
             setTimeout(Play, 100);
         } else {
-            alert(`Bravo! Vous avez trouvé le nombre ${guess}!`);
+            alert(`Congrats!! you found the number ${guess}! SUUUUUUUUUUIII!!`);
         }
     } else {
-        alert(`Dommage! Le nombre mystère était ${numberToGuess}.`);
+        alert(`Unlucky! The Unknown number was ${numberToGuess}.`);
     }
 }

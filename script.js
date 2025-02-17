@@ -1,12 +1,13 @@
 let start_button = document.querySelector('#start');
 let restat_button = document.querySelector('#restart');
 let difficulty_buttons = document.querySelectorAll('.btn-check');
-let numberToGuess = null;
-let checked_index = null;
-let guess = null;
-let tries_left = null;
-let difficulty = null;
+let numberToGuess = null; // number to guess
+let checked_index = null;  // index of the chosen difficulty
+let guess = null; // the number you guessed
+let tries_left = null; // how many tries i have more to guess before i lose
+let difficulty = null; // difficulty level
 
+// make sure only one difficulty level is selected at a time and checking one difficulty unchecks the other difficulty buttons
 difficulty_buttons.forEach(btn => {
     btn.addEventListener('change', () => {
         difficulty_buttons.forEach(cb => {
@@ -18,7 +19,7 @@ difficulty_buttons.forEach(btn => {
         checked_index = Array.from(difficulty_buttons).indexOf(btn);
     })
 });
-
+// updates of the ui and the process that runs on each start event
 start_button.addEventListener('click', () => {
     switch (checked_index) {
         case 0:
@@ -52,7 +53,7 @@ start_button.addEventListener('click', () => {
 
     setTimeout(Play, 100);
 });
-
+// updates to the ui on each click on the restart button
 restat_button.addEventListener('click', () => {
     numberToGuess = null;
     guess = null;
@@ -67,7 +68,7 @@ restat_button.addEventListener('click', () => {
 
     difficulty_buttons.forEach(btn => btn.checked = false);
 });
-
+// main play function
 function Play() {
     if (tries_left > 0) {
         guess = parseInt(prompt(`Guss the number between 1 and ${range} (You still have ${tries_left} tries left):`));

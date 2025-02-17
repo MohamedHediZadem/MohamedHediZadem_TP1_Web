@@ -2,6 +2,18 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../TP2_Web"
+		},
+		{
+			"path": "../TP3_Web"
+		},
+		{
+			"path": "../TP4_Web"
 		}
-	]
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "TP4_Web"
+	}
 }
